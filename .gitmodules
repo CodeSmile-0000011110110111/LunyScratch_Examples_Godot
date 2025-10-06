@@ -1,0 +1,5 @@
+[submodule "addons/lunyscratch"]
+	path = addons/lunyscratch
+	url = https://github.com/CodeSmile-0000011110110111/LunyScratch_Godot.git
+	branch = main
+	
