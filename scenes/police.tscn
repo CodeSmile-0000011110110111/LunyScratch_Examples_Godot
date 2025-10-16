@@ -1,59 +1,86 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy4utpfo8eu4m"]
+[gd_scene load_steps=5 format=3 uid="uid://dy4utpfo8eu4m"]
 
 [ext_resource type="Script" uid="uid://d0sun4ac6md0t" path="res://scratches/PoliceCarScratch.cs" id="1_0bal8"]
 [ext_resource type="PackedScene" uid="uid://cewxr2pv15xd2" path="res://kenney.nl/kenney_car-kit/Models/FBX format/police.fbx" id="1_uiqs7"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cw7eu"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0bal8"]
+size = Vector3(1, 0.75, 2.75)
 
-[node name="Police" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_71yvf"]
+size = Vector3(1, 0.45, 1.3)
+
+[node name="PoliceCar" type="Node3D"]
 script = ExtResource("1_0bal8")
+_turnSpeed = 1.0
+_moveSpeed = 20.0
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="police" type="RigidBody3D" parent="." groups=["Police"]]
+mass = 1000.0
+contact_monitor = true
+max_contacts_reported = 4
+linear_damp = 0.01
+angular_damp = 6.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 3, 0, 0.37712377, 0)
-shape = SubResource("BoxShape3D_cw7eu")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="police"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("BoxShape3D_0bal8")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1.25, 0, 0.9444462, -0.09058261)
-shape = SubResource("BoxShape3D_cw7eu")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="police"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.975, -0.1)
+shape = SubResource("BoxShape3D_71yvf")
 
-[node name="police" parent="RigidBody3D" instance=ExtResource("1_uiqs7")]
+[node name="police mesh" parent="police" instance=ExtResource("1_uiqs7")]
 
-[node name="BlueLight" type="OmniLight3D" parent="RigidBody3D/police"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.3828273, 0.10335937)
-light_color = Color(0, 0, 1, 1)
-light_energy = 10.0
-light_volumetric_fog_energy = 2.0
-omni_attenuation = 2.0
+[node name="BlueLight" type="OmniLight3D" parent="police/police mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.3828273, 0.075453)
+light_color = Color(0.07402437, 0.31180274, 1, 1)
+light_energy = 3.0
+light_volumetric_fog_energy = 16.0
+omni_range = 4.0
 
-[node name="RedLight" type="OmniLight3D" parent="RigidBody3D/police"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.3828273, 0.10335937)
+[node name="RedLight" type="OmniLight3D" parent="police/police mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.3828273, 0.075453)
 light_color = Color(1, 0, 0, 1)
-light_energy = 4.0
+light_energy = 1.471
+light_volumetric_fog_energy = 16.0
+omni_range = 4.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="police/police mesh"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.49, 0.563, 1.371)
+light_energy = 5.0
+light_volumetric_fog_energy = 1.3
+spot_range = 7.0
+spot_angle = 25.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="police/police mesh/SpotLight3D"]
+light_volumetric_fog_energy = 1.3
+omni_range = 0.15
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="police/police mesh"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.49, 0.563, 1.371)
+light_energy = 5.0
+light_volumetric_fog_energy = 1.3
+spot_range = 7.0
+spot_angle = 25.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="police/police mesh/SpotLight3D2"]
+light_volumetric_fog_energy = 1.3
+omni_range = 0.15
+
+[node name="BrakeLight1" type="OmniLight3D" parent="police/police mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.7, -1.6106309)
+visible = false
+light_color = Color(0.79096925, 4.283637e-06, 8.663535e-07, 1)
 light_volumetric_fog_energy = 2.0
-omni_attenuation = 2.0
-
-[node name="SpotLight3D" type="SpotLight3D" parent="RigidBody3D/police"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.4, 0.563, 1.371)
-light_energy = 5.0
-spot_range = 7.0
-spot_angle = 25.0
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="RigidBody3D/police"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.4, 0.563, 1.371)
-light_energy = 5.0
-spot_range = 7.0
-spot_angle = 25.0
-
-[node name="BrakeLight" type="OmniLight3D" parent="RigidBody3D/police"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.7, -1.55)
-light_color = Color(0.79096925, 4.283637e-06, 8.663535e-07, 1)
-light_energy = 2.0
 omni_range = 0.25
 
-[node name="BrakeLight2" type="OmniLight3D" parent="RigidBody3D/police"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.7, -1.55)
+[node name="BrakeLight2" type="OmniLight3D" parent="police/police mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.7, -1.6106309)
+visible = false
 light_color = Color(0.79096925, 4.283637e-06, 8.663535e-07, 1)
-light_energy = 2.0
+light_volumetric_fog_energy = 2.0
 omni_range = 0.25
+
+[node name="Camera3D" type="Camera3D" parent="police"]
+transform = Transform3D(-1, -4.72772e-09, 8.729484e-08, 0, 0.99853665, 0.054078814, -8.742278e-08, 0.054078814, -0.99853665, 0, 2.5, -5)
+fov = 65.0

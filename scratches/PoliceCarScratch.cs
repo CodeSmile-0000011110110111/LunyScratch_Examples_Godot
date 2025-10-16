@@ -1,12 +1,63 @@
 using Godot;
 using LunyScratch;
+using System;
 using static LunyScratch.Blocks;
+using Key = LunyScratch.Key;
 
-public partial class PoliceCarScratch : ScratchNode3D
+public sealed partial class PoliceCarScratch : ScratchNode3D
 {
-	public override void _Ready()
+	[Export] private Single _turnSpeed = 150f;
+	[Export] private Single _moveSpeed = 30f;
+	[Export] private Single _deceleration = 0.85f;
+	[Export] private Int32 _startTimeInSeconds = 30;
+
+	protected override void OnScratchReady()
 	{
-		GD.Print("test print");
+		var progressVar = GlobalVariables["Progress"];
+		var scoreVariable = Variables.Set("Score", 0);
+		var timeVariable = Variables.Set("Time", _startTimeInSeconds);
+
+		// Handle UI State
+		// TODO: HUD var binding
+		//HUD.BindVariable(scoreVariable);
+		//HUD.BindVariable(timeVariable);
+
+		Run(HideMenu(), ShowHUD());
+		RepeatForever(If(IsKeyPressed(Key.Escape), ShowMenu()));
+		// must run globally because we Disable() the car and thus all object sequences will stop updating
+		Scratch.When(ButtonClicked("TryAgain"), ReloadCurrentScene());
+		Scratch.When(ButtonClicked("Quit"), QuitApplication());
+
+		// tick down time, and eventually game over
+		RepeatForever(Wait(1), DecrementVariable("Time"),
+			If(IsVariableLessOrEqual(timeVariable, 0),
+				ShowMenu(), SetCameraTrackingTarget(null), Wait(0.5), DisableComponent()));
+
+		// Use RepeatForeverPhysics for physics-based movement
+		var enableBrakeLights = Sequence(Enable("BrakeLight1"), Enable("BrakeLight2"));
+		var disableBrakeLights = Sequence(Disable("BrakeLight1"), Disable("BrakeLight2"));
+		RepeatForeverPhysics(
+			// Forward/Backward movement
+			If(IsKeyPressed(Key.W),
+					MoveForward(_moveSpeed), disableBrakeLights)
+				.Else(If(IsKeyPressed(Key.S),
+						MoveBackward(_moveSpeed), enableBrakeLights)
+					.Else(SlowDownMoving(_deceleration), disableBrakeLights)
+				),
+
+			// Steering
+			If(IsKeyPressed(Key.A), TurnLeft(_turnSpeed)),
+			If(IsKeyPressed(Key.D), TurnRight(_turnSpeed))
+		);
+
+		// add score and time on ball collision
+		When(CollisionEnter(tag: "CompanionCube"),
+			IncrementVariable("Time"),
+			// add 'power of three' times the progress to score
+			SetVariable(Variables["temp"], progressVar),
+			MultiplyVariable(Variables["temp"], progressVar),
+			MultiplyVariable(Variables["temp"], progressVar),
+			AddVariable(scoreVariable, Variables["temp"]));
 
 		// blinking signal lights
 		RepeatForever(
