@@ -5,4 +5,8 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <LangVersion>9</LangVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="addons\lunyscratch\Runtime\Godot\Objects\" />
+    <Folder Include="addons\lunyscratch\Runtime\Godot\UI\" />
+  </ItemGroup>
 </Project>
