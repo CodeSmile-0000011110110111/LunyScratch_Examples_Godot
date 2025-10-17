@@ -42,7 +42,6 @@ camera_attributes = SubResource("CameraAttributesPhysical_nx3wj")
 
 [node name="Police" parent="." instance=ExtResource("2_nx3wj")]
 _turnSpeed = 85.0
-_startTimeInSeconds = 2
 
 [node name="Cubes" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 25)

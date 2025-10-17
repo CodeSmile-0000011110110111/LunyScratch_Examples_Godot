@@ -22,7 +22,7 @@ public sealed partial class PoliceCarScratch : ScratchRigidbody3D
 		HUD.BindVariable(timeVariable);
 
 		Run(HideMenu(), ShowHUD());
-		RepeatForever(If(IsKeyPressed(Key.Escape), ShowMenu()));
+		RepeatForever(If(IsKeyJustPressed(Key.Escape), ShowMenu()));
 
 		// must run globally because we Disable() the car and thus all object sequences will stop updating
 		Scratch.When(ButtonClicked("TryAgain"), ReloadCurrentScene());
