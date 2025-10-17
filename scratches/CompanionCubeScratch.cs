@@ -7,7 +7,7 @@ namespace LunyScratch_Examples.scratches
 {
 	public sealed partial class CompanionCubeScratch : ScratchRigidbody3D
 	{
-		[Export] private Single _minVelocityForSound = 25f;
+		[Export] private Single _minVelocityForSound = 5f;
 
 		protected override void OnScratchReady()
 		{

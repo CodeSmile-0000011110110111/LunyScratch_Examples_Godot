@@ -34,5 +34,8 @@ skeleton = NodePath("../..")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("1_dn5ww")
+volume_db = -19.839
+max_db = 1.0
+pitch_scale = 0.87
 autoplay = true
 max_distance = 20.0
