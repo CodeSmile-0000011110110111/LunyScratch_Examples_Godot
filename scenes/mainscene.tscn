@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://yjdji1dco61a"]
+[gd_scene load_steps=10 format=3 uid="uid://yjdji1dco61a"]
 
 [ext_resource type="PackedScene" uid="uid://wbxixaxuofho" path="res://scenes/floor.tscn" id="1_golqe"]
 [ext_resource type="PackedScene" uid="uid://dy4utpfo8eu4m" path="res://scenes/police.tscn" id="2_nx3wj"]
 [ext_resource type="PackedScene" uid="uid://13ejd45d5sw4" path="res://scenes/CompanionCube.tscn" id="3_nx3wj"]
+[ext_resource type="PackedScene" uid="uid://dfjkdpdrb7dqi" path="res://scenes/hud.tscn" id="4_mo382"]
+[ext_resource type="PackedScene" uid="uid://bo6s2e3iiqvwg" path="res://scenes/menu.tscn" id="5_nshjd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_golqe"]
 sky_top_color = Color(0.4112052, 0.37769762, 0.80122834, 1)
@@ -39,8 +41,8 @@ camera_attributes = SubResource("CameraAttributesPhysical_nx3wj")
 [node name="Floor" parent="." instance=ExtResource("1_golqe")]
 
 [node name="Police" parent="." instance=ExtResource("2_nx3wj")]
-_turnSpeed = 128.0
-_startTimeInSeconds = 60
+_turnSpeed = 85.0
+_startTimeInSeconds = 2
 
 [node name="Cubes" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 25)
@@ -212,3 +214,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 25)
 [node name="CompanionCube83" parent="Cubes" instance=ExtResource("3_nx3wj")]
 
 [node name="CompanionCube84" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="Hud" parent="." instance=ExtResource("4_mo382")]
+
+[node name="Menu" parent="." instance=ExtResource("5_nshjd")]

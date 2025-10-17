@@ -21,7 +21,6 @@ linear_velocity = Vector3(0, 2, 0)
 angular_velocity = Vector3(13.561209, 11.623893, 17.435839)
 angular_damp = 0.1
 script = ExtResource("1_oyglf")
-_timeToLiveInSeconds = 180.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_xgdoc")

@@ -20,20 +20,23 @@ albedo_color = Color(0.999996, 0.15249571, 0.30183536, 1)
 material = SubResource("StandardMaterial3D_q61c0")
 
 [node name="CompanionCube" type="RigidBody3D" groups=["CompanionCube"]]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 contact_monitor = true
 max_contacts_reported = 4
-linear_velocity = Vector3(0, 5, 1)
-angular_damp = 0.025
+linear_velocity = Vector3(0, 10, 1)
+linear_damp = 0.02
+angular_damp = 0.05
 script = ExtResource("1_ilw5p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_yf3h0")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("BoxShape3D_ilw5p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("BoxMesh_yf3h0")
 skeleton = NodePath("../..")
 

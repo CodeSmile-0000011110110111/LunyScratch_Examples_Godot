@@ -6,9 +6,6 @@
     <LangVersion>9</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="addons\lunyscratch\Runtime\Godot\UI\" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Remove="UnityReferenceImplementation\UI\ScratchUI.cs" />
     <None Include="UnityReferenceImplementation\UI\ScratchUI.cs" />
     <Compile Remove="UnityReferenceImplementation\Objects\ScratchCamera.cs" />

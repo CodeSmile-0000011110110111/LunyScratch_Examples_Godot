@@ -18,12 +18,12 @@ public sealed partial class PoliceCarScratch : ScratchRigidbody3D
 		var timeVariable = Variables.Set("Time", _startTimeInSeconds);
 
 		// Handle UI State
-		// TODO: HUD var binding
-		//HUD.BindVariable(scoreVariable);
-		//HUD.BindVariable(timeVariable);
+		HUD.BindVariable(scoreVariable);
+		HUD.BindVariable(timeVariable);
 
 		Run(HideMenu(), ShowHUD());
 		RepeatForever(If(IsKeyPressed(Key.Escape), ShowMenu()));
+
 		// must run globally because we Disable() the car and thus all object sequences will stop updating
 		Scratch.When(ButtonClicked("TryAgain"), ReloadCurrentScene());
 		Scratch.When(ButtonClicked("Quit"), QuitApplication());
