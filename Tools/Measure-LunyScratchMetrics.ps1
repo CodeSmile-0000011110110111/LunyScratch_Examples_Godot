@@ -57,7 +57,7 @@
 #>
 [CmdletBinding()]
 param(
-  [string]$PackageRoot = "Packages\de.codesmile.lunyscratch_unity",
+  [string]$PackageRoot = "addons\lunyscratch",
   [string]$BaselineFile
 )
 
