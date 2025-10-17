@@ -29,9 +29,9 @@ namespace LunyScratch_Examples.scratches
 							counterVar.Set(Math.Clamp(progressVar.Number, 1, 50));
 						counterVar.Subtract(1);
 						return counterVar.Number >= 0;
-					}, CreateInstance("Prefabs/HitEffect"), Wait(1 / 66f),
-					CreateInstance("Prefabs/HitEffect"), Wait(1 / 66f),
-					CreateInstance("Prefabs/HitEffect")),
+					}, CreateInstance("scenes/hiteffect"), Wait(1 / 60f),
+					CreateInstance("scenes/hiteffect"), Wait(1 / 60f),
+					CreateInstance("scenes/hiteffect")),
 				Wait(1), Disable("Lights"));
 
 			// play sound when ball bumps into anything

@@ -4,12 +4,12 @@ using System;
 using static LunyScratch.Blocks;
 using Key = LunyScratch.Key;
 
-public sealed partial class PoliceCarScratch : ScratchNode3D
+public sealed partial class PoliceCarScratch : ScratchRigidbody3D
 {
-	[Export] private Single _turnSpeed = 150f;
-	[Export] private Single _moveSpeed = 30f;
+	[Export] private Single _turnSpeed = 70f;
+	[Export] private Single _moveSpeed = 16f;
 	[Export] private Single _deceleration = 0.85f;
-	[Export] private Int32 _startTimeInSeconds = 30;
+	[Export] private Int32 _startTimeInSeconds = 5;
 
 	protected override void OnScratchReady()
 	{
@@ -72,5 +72,11 @@ public sealed partial class PoliceCarScratch : ScratchNode3D
 			Enable("BlueLight"),
 			Wait(0.17)
 		);
+
+		// Helpers
+		// don't play minicube sound too often
+		RepeatForever(DecrementVariable(GlobalVariables["MiniCubeSoundTimeout"]));
+		// increment progress every so often
+		RepeatForever(IncrementVariable(progressVar), Wait(15), PlaySound());
 	}
 }
