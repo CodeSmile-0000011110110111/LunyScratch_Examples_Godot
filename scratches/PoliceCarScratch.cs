@@ -46,8 +46,9 @@ public sealed partial class PoliceCarScratch : ScratchRigidbody3D
 				),
 
 			// Steering
-			If(IsKeyPressed(Key.A), TurnLeft(_turnSpeed)),
-			If(IsKeyPressed(Key.D), TurnRight(_turnSpeed))
+			If(IsCurrentSpeedGreater(0.1),
+				If(IsKeyPressed(Key.A), TurnLeft(_turnSpeed)),
+				If(IsKeyPressed(Key.D), TurnRight(_turnSpeed)))
 		);
 
 		// add score and time on ball collision

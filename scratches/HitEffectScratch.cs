@@ -16,7 +16,7 @@ namespace LunyScratch_Examples.scratches
 
 			var globalTimeout = GlobalVariables["MiniCubeSoundTimeout"];
 			When(CollisionEnter(),
-				If(AND(IsVariableLessThan(globalTimeout, 0), IsVelocityGreater(_minVelocityForSound)),
+				If(AND(IsVariableLessThan(globalTimeout, 0), IsCurrentSpeedGreater(_minVelocityForSound)),
 					PlaySound(), SetVariable(globalTimeout, 0)));
 		}
 	}
