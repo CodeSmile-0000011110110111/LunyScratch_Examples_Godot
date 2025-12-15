@@ -11,4 +11,16 @@
     <EmbeddedResource Remove="RFC~\**" />
     <None Remove="RFC~\**" />
   </ItemGroup>
+
+    <!-- Show all .gd files in the project tree, but don’t compile them -->
+    <ItemGroup>
+        <None Include="**\*.gd">
+            <Visible>true</Visible>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="**\*.cfg">
+            <Visible>true</Visible>
+        </None>
+    </ItemGroup>
 </Project>
