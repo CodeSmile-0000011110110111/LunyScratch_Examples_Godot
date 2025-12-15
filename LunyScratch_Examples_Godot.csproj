@@ -11,7 +11,4 @@
     <EmbeddedResource Remove="RFC~\**" />
     <None Remove="RFC~\**" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="addons\lunyscript\lunyscript.csproj" />
-  </ItemGroup>
 </Project>
