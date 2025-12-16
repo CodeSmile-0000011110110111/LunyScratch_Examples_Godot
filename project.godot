@@ -21,8 +21,11 @@ LunyBootstrap="*res://addons/lunyscript/Luny.Godot/GodotLifecycleAdapter.cs"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1366
+window/size/viewport_height=768
+window/size/initial_position_type=0
+window/size/initial_position=Vector2i(2200, 500)
+window/size/resizable=false
 
 [dotnet]
 
