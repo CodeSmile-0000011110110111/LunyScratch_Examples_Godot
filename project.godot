@@ -13,11 +13,18 @@ config_version=5
 config/name="LunyScratch_Examples_Godot"
 run/main_scene="uid://barg27i20i3p3"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
 LunyBootstrap="*res://addons/lunyscript/Luny.Godot/GodotLifecycleAdapter.cs"
+
+[debug]
+
+file_logging/enable_file_logging=true
+file_logging/max_log_files=2
+gdscript/warnings/exclude_addons=false
 
 [display]
 
