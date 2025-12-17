@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LunyBootstrap="*res://addons/lunyscript/Luny.Godot/GodotLifecycleAdapter.cs"
+LunyLifecycle="*res://addons/lunyscript/Luny.Godot/GodotLifecycleAdapter.cs"
 
 [debug]
 
