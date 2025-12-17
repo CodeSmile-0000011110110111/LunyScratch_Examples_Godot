@@ -14,6 +14,11 @@
 
     <!-- Show all .gd files in the project tree, but don’t compile them -->
     <ItemGroup>
+        <None Include="**\*.md">
+            <Visible>true</Visible>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
         <None Include="**\*.gd">
             <Visible>true</Visible>
         </None>
