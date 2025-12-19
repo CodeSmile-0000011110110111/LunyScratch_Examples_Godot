@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://yjdji1dco61a"]
+[gd_scene load_steps=11 format=3 uid="uid://yjdji1dco61a"]
 
 [ext_resource type="PackedScene" uid="uid://wbxixaxuofho" path="res://scenes/floor.tscn" id="1_golqe"]
 [ext_resource type="PackedScene" uid="uid://dy4utpfo8eu4m" path="res://scenes/police.tscn" id="2_nx3wj"]
 [ext_resource type="PackedScene" uid="uid://13ejd45d5sw4" path="res://scenes/CompanionCube.tscn" id="3_nx3wj"]
 [ext_resource type="PackedScene" uid="uid://dfjkdpdrb7dqi" path="res://scenes/hud.tscn" id="4_mo382"]
 [ext_resource type="PackedScene" uid="uid://bo6s2e3iiqvwg" path="res://scenes/menu.tscn" id="5_nshjd"]
+[ext_resource type="PackedScene" uid="uid://di4j1wr0typjc" path="res://scenes/ExampleLunyScript.tscn" id="6_nshjd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_golqe"]
 sky_top_color = Color(0.4112052, 0.37769762, 0.80122834, 1)
@@ -231,3 +232,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 25)
 [node name="Hud" parent="." instance=ExtResource("4_mo382")]
 
 [node name="Menu" parent="." instance=ExtResource("5_nshjd")]
+
+[node name="ExampleLunyScript_Prefab" parent="." instance=ExtResource("6_nshjd")]
+
+[node name="ExampleLunyScript_Prefab2" parent="." instance=ExtResource("6_nshjd")]
