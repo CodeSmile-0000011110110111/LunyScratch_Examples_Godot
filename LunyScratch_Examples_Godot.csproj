@@ -29,6 +29,9 @@
         </None>
     </ItemGroup>
     <ItemGroup>
+        <Folder Include="addons\lunyscript\" />
+    </ItemGroup>
+    <ItemGroup>
       <Folder Include="addons\lunyscript\Luny.Godot\Tests\" />
     </ItemGroup>
 </Project>
