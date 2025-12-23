@@ -28,6 +28,7 @@ public sealed class ExampleLunyScript : LunyScript.LunyScript
 				Variables["Health"] = health - 1;
 			}),
 			DebugBreak("sequence breakpoint"),
+			EditorPausePlayer("PAUSE PLAYER"),
 			Log("Multi-block sequence end")
 		);
 
