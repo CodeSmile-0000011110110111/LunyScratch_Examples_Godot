@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LunyScratch_Examples_Godot"
-run/main_scene="uid://yjdji1dco61a"
+run/main_scene="uid://bv3gafhw3bpyi"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -28,10 +28,9 @@ gdscript/warnings/exclude_addons=false
 
 [display]
 
-window/size/viewport_width=1366
-window/size/viewport_height=768
-window/size/initial_position_type=0
-window/size/initial_position=Vector2i(2200, 500)
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/initial_position_type=4
 window/size/resizable=false
 
 [dotnet]

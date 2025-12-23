@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://13ejd45d5sw4"]
+
+[ext_resource type="Script" uid="uid://br8b52jmebqa1" path="res://ProofOfConcept/scratches/CompanionCubeScratch.cs" id="1_ilw5p"]
+[ext_resource type="AudioStream" uid="uid://c4atmbmgcwgha" path="res://ProofOfConcept/kenney.nl/kenney_impact-sounds/Audio/footstep_wood_001.ogg" id="2_2kc6v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yf3h0"]
+radius = 0.667
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilw5p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kc6v"]
+albedo_color = Color(0.18896928, 0.1889691, 0.18896914, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yf3h0"]
+material = SubResource("StandardMaterial3D_2kc6v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q61c0"]
+albedo_color = Color(0.999996, 0.15249571, 0.30183536, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ilw5p"]
+material = SubResource("StandardMaterial3D_q61c0")
+
+[node name="CompanionCube" type="RigidBody3D" groups=["CompanionCube"]]
+contact_monitor = true
+max_contacts_reported = 4
+linear_velocity = Vector3(0, 10, 1)
+linear_damp = 0.02
+angular_damp = 0.05
+script = ExtResource("1_ilw5p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_yf3h0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_ilw5p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("BoxMesh_yf3h0")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1.333, 0, 0, 0, 1.333, 0, 0, 0, 1.333, 0, 0, 0)
+mesh = SubResource("SphereMesh_ilw5p")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
+light_color = Color(1.5594364e-05, 0.6240352, 0.99734706, 1)
+light_energy = 22.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 26.0
+omni_range = 0.35
+omni_attenuation = 2.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8)
+light_color = Color(1.5594364e-05, 0.6240352, 0.99734706, 1)
+light_energy = 22.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 26.0
+omni_range = 0.35
+omni_attenuation = 2.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+light_color = Color(1.5594364e-05, 0.6240352, 0.99734706, 1)
+light_energy = 22.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 26.0
+omni_range = 0.35
+omni_attenuation = 2.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0)
+light_color = Color(1.5594364e-05, 0.6240352, 0.99734706, 1)
+light_energy = 22.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 26.0
+omni_range = 0.35
+omni_attenuation = 2.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+light_color = Color(1.5594364e-05, 0.6240352, 0.99734706, 1)
+light_energy = 22.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 26.0
+omni_range = 0.35
+omni_attenuation = 2.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+light_color = Color(1.5594364e-05, 0.6240352, 0.99734706, 1)
+light_energy = 22.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 26.0
+omni_range = 0.35
+omni_attenuation = 2.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_2kc6v")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv3gafhw3bpyi"]
+
+[ext_resource type="PackedScene" uid="uid://di4j1wr0typjc" path="res://Luny/ExampleLunyScript_Scene.tscn" id="1_8d863"]
+
+[node name="LunyExampleScene" type="Node3D"]
+
+[node name="ExampleLunyScript_Prefab" parent="." instance=ExtResource("1_8d863")]

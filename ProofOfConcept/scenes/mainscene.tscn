@@ -1,0 +1,238 @@
+[gd_scene load_steps=11 format=3 uid="uid://yjdji1dco61a"]
+
+[ext_resource type="PackedScene" uid="uid://wbxixaxuofho" path="res://ProofOfConcept/scenes/floor.tscn" id="1_golqe"]
+[ext_resource type="PackedScene" uid="uid://dy4utpfo8eu4m" path="res://ProofOfConcept/scenes/police.tscn" id="2_nx3wj"]
+[ext_resource type="PackedScene" uid="uid://13ejd45d5sw4" path="res://ProofOfConcept/scenes/CompanionCube.tscn" id="3_nx3wj"]
+[ext_resource type="PackedScene" uid="uid://dfjkdpdrb7dqi" path="res://ProofOfConcept/scenes/hud.tscn" id="4_mo382"]
+[ext_resource type="PackedScene" uid="uid://bo6s2e3iiqvwg" path="res://ProofOfConcept/scenes/menu.tscn" id="5_nshjd"]
+[ext_resource type="PackedScene" uid="uid://di4j1wr0typjc" path="res://Luny/ExampleLunyScript_Scene.tscn" id="6_nshjd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_golqe"]
+sky_top_color = Color(0.4112052, 0.37769762, 0.80122834, 1)
+sky_horizon_color = Color(0.91538656, 0.48975033, 0.72698486, 1)
+
+[sub_resource type="Sky" id="Sky_nx3wj"]
+sky_material = SubResource("ProceduralSkyMaterial_golqe")
+
+[sub_resource type="Environment" id="Environment_golqe"]
+background_mode = 2
+sky = SubResource("Sky_nx3wj")
+ssao_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.5183173, 0.5615211, 0.5492124, 1)
+fog_density = 0.003
+fog_aerial_perspective = 0.85
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.025
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_nx3wj"]
+auto_exposure_enabled = true
+
+[node name="MainScene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0.38912395, 0.9211854, 0, 0.9211854, -0.38912395, -1, -1.7009148e-08, -4.026629e-08, 0, 25, 0)
+light_color = Color(1, 0.8392157, 0.7019608, 1)
+light_energy = 0.471
+light_volumetric_fog_energy = 0.471
+shadow_enabled = true
+shadow_transmittance_bias = 5.338
+shadow_blur = 0.0
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0.38912395, 0.9211854, 0, 0.9211854, -0.38912395, -1, -1.7009148e-08, -4.026629e-08, 0, 25, 0)
+light_color = Color(1, 0.8392157, 0.7019608, 1)
+light_energy = 0.471
+light_volumetric_fog_energy = 0.471
+shadow_enabled = true
+shadow_transmittance_bias = 5.338
+shadow_blur = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_golqe")
+camera_attributes = SubResource("CameraAttributesPhysical_nx3wj")
+
+[node name="Floor" parent="." instance=ExtResource("1_golqe")]
+
+[node name="Police" parent="." instance=ExtResource("2_nx3wj")]
+_turnSpeed = 85.0
+
+[node name="Cubes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 25)
+
+[node name="CompanionCube" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube2" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube3" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube4" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube5" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube6" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube7" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube8" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube9" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube10" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube11" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube12" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube13" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube14" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube15" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube16" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube17" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube18" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube19" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube20" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube21" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube22" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube23" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube24" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube25" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube26" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube27" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube28" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube29" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube30" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube31" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube32" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube33" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube34" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube35" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube36" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube37" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube38" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube39" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube40" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube41" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube42" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube43" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube44" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube45" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube46" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube47" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube48" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube49" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube50" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube51" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube52" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube53" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube54" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube55" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube56" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube57" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube58" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube59" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube60" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube61" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube62" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube63" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube64" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube65" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube66" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube67" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube68" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube69" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube70" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube71" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube72" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube73" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube74" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube75" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube76" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube77" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube78" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube79" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube80" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube81" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube82" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube83" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="CompanionCube84" parent="Cubes" instance=ExtResource("3_nx3wj")]
+
+[node name="Hud" parent="." instance=ExtResource("4_mo382")]
+
+[node name="Menu" parent="." instance=ExtResource("5_nshjd")]
+
+[node name="ExampleLunyScript_Prefab" parent="." instance=ExtResource("6_nshjd")]
+
+[node name="ExampleLunyScript_Prefab2" parent="." instance=ExtResource("6_nshjd")]
