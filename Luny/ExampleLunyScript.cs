@@ -7,8 +7,8 @@ public sealed class ExampleLunyScript : LunyScript.LunyScript
 	public override void Build()
 	{
 		// Set up variables
-		Variables["Health"] = 100;
-		Variables["Name"] = "Player1";
+		LocalVariables["Health"] = 100;
+		LocalVariables["Name"] = "Player1";
 		GlobalVariables["GameScore"] = 0;
 
 		// Demonstrate Log vs DebugLog
@@ -24,8 +24,8 @@ public sealed class ExampleLunyScript : LunyScript.LunyScript
 			Log("Multi-block sequence start"),
 			Do(() =>
 			{
-				var health = Variables.Get<int>("Health");
-				Variables["Health"] = health - 1;
+				var health = LocalVariables.Get<int>("Health");
+				LocalVariables["Health"] = health - 1;
 			}),
 			DebugBreak("sequence breakpoint"),
 			EditorPausePlayer("PAUSE PLAYER"),
