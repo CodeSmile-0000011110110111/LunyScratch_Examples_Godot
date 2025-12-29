@@ -11,30 +11,39 @@ public sealed class ExampleLunyScript : LunyScript.LunyScript
 		LocalVariables["Name"] = "Player1";
 		GlobalVariables["GameScore"] = 0;
 
+		GlobalVariables["Boolean_True"] = true;
+		GlobalVariables["Boolean_False"] = false;
+		GlobalVariables["String_Value"] = "this is a string";
+		GlobalVariables["Number_Value"] = 1234567890;
+
 		// Demonstrate Log vs DebugLog
 		// DebugLog() is completely stripped in release builds
-		OnUpdate(DebugLog("Debug-only log - stripped in release"));
+		//OnUpdate(DebugLog("Debug-only log - stripped in release"));
+
 		// Log() appears in both debug and release builds
-		OnUpdate(Log("ExampleLunyScript Update tick - always logs"));
-		OnFixedStep(Log("ExampleLunyScript FixedStep tick"));
-		OnLateUpdate(Log("ExampleLunyScript LateUpdate tick"));
+		// OnUpdate(Log("ExampleLunyScript Update tick - always logs"));
+		// OnFixedStep(Log("ExampleLunyScript FixedStep tick"));
+		// OnLateUpdate(Log("ExampleLunyScript LateUpdate tick"));
 
 		// Multi-block sequence demonstrating debug breakpoint
-		OnUpdate(
-			Log("Multi-block sequence start"),
-			Do(() =>
+		Every.Frame(
+			//Log("Multi-block sequence start"),
+			Run(() =>
 			{
 				var health = LocalVariables.Get<int>("Health");
 				LocalVariables["Health"] = health - 1;
-			}),
-			DebugBreak("sequence breakpoint"),
-			EditorPausePlayer("PAUSE PLAYER"),
-			Log("Multi-block sequence end")
+
+				var score = LocalVariables.Get<int>("LocalScore");
+				LocalVariables["LocalScore"] = ++score;
+			})
+			//DebugBreak("sequence breakpoint"),
+			//EditorPausePlayer("PAUSE PLAYER"),
+			//Log("Multi-block sequence end")
 		);
 
 		// Demonstrate global variables with variable change tracking
 		// In debug builds, Variables.OnVariableChanged events will fire
-		OnUpdate(Do(() =>
+		Every.FixedStep(Run(() =>
 		{
 			var score = GlobalVariables.Get<int>("GameScore");
 			GlobalVariables["GameScore"] = score + 1;
