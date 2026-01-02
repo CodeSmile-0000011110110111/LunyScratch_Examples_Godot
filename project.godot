@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="LunyScratch_Examples_Godot"
-run/main_scene="uid://bv3gafhw3bpyi"
+run/main_scene="uid://drau1ywmtrylk"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
-LunyLifecycle="*res://addons/lunyscript/Luny.Godot/GodotLifecycleAdapter.cs"
+LunyEngineGodotAdapter="*res://addons/lunyscript/Luny.Godot/LunyEngineGodotAdapter.cs"
 
 [debug]
 
@@ -39,7 +39,7 @@ project/assembly_name="LunyScratch_Examples_Godot"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Hidefolders/plugin.cfg", "res://addons/lunyscratch/plugin.cfg", "res://addons/lunyscript/plugin.cfg")
+enabled=PackedStringArray("res://addons/Hidefolders/plugin.cfg", "res://addons/lunyscript/plugin.cfg")
 
 [global_group]
 

@@ -31,6 +31,7 @@
     </ItemGroup>
     <ItemGroup>
         <Folder Include="addons\lunyscript\" />
+        <Folder Include="addons\lunyscript\LunyScript.Godot\Tests\" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="addons\lunyscript\Luny.Godot\Tests\" />
