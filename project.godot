@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LunyEngineGodotAdapter="*res://addons/lunyscript/Luny.Godot/LunyEngineGodotAdapter.cs"
+LunyEngineGodotAdapter="*res://addons/lunyscript/Luny.Godot/Engine/LunyEngineGodotAdapter.cs"
 
 [debug]
 
