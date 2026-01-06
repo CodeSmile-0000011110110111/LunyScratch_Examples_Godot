@@ -1,3 +1,5 @@
+using System;
+
 /// <summary>
 /// Example LunyScript demonstrating the block system and Step 2 debug/profiling features.
 /// This script will automatically bind to any GameObject named "ExampleLunyScript" in the scene.
@@ -30,10 +32,10 @@ public sealed class ExampleLunyScript : LunyScript.LunyScript
 			//Log("Multi-block sequence start"),
 			Run(() =>
 			{
-				var health = LocalVariables.Get<int>("Health");
+				var health = LocalVariables.Get<Int32>("Health");
 				LocalVariables["Health"] = health - 1;
 
-				var score = LocalVariables.Get<int>("LocalScore");
+				var score = LocalVariables.Get<Int32>("LocalScore");
 				LocalVariables["LocalScore"] = ++score;
 			})
 			//DebugBreak("sequence breakpoint"),
@@ -45,7 +47,7 @@ public sealed class ExampleLunyScript : LunyScript.LunyScript
 		// In debug builds, Variables.OnVariableChanged events will fire
 		When.EveryFixedStep(Run(() =>
 		{
-			var score = GlobalVariables.Get<int>("GameScore");
+			var score = GlobalVariables.Get<Int32>("GameScore");
 			GlobalVariables["GameScore"] = score + 1;
 		}));
 
