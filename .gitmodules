@@ -1,8 +1,10 @@
 [submodule "addons/lunyscratch"]
 	path = addons/lunyscratch
+	branch = .
+    update = merge
 	url = https://github.com/CodeSmile-0000011110110111/LunyScratch_Godot.git
-	branch = main
-	update = merge
 [submodule "addons/lunyscript"]
 	path = addons/lunyscript
+	branch = .
+    update = merge
 	url = https://github.com/CodeSmile-0000011110110111/LunyScript-Godot
