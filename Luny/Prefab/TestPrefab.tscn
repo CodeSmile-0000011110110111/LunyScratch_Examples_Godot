@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6hgv4sm46u3l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h2oif"]
+
+[node name="TestPrefab" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.14549796, -0.27321684, -0.9508853, -0.086809926, 0.9538805, -0.28736052, 0.98554265, 0.12435665, 0.11506973, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_h2oif")
