@@ -54,6 +54,5 @@ Police=""
 
 rendering_device/vsync/swapchain_image_count=2
 textures/canvas_textures/default_texture_filter=0
-scaling_3d/scale=0.25
 textures/decals/filter=0
 textures/light_projectors/filter=0
