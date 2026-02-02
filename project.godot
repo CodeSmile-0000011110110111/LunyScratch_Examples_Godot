@@ -8,23 +8,29 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="LunyScratch_Examples_Godot"
 run/main_scene="uid://4tqeylbog06x"
-config/features=PackedStringArray("4.5", "C#", "Forward Plus")
+config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
-LunyEngineGodotAdapter="*res://addons/lunyscript/Luny.Godot/Engine/LunyEngineGodotAdapter.cs"
+LunyEngineGodotAdapter="*uid://ss4vx144dk5g"
 
 [debug]
 
 file_logging/enable_file_logging=true
 file_logging/max_log_files=2
-gdscript/warnings/exclude_addons=false
+gdscript/warnings/directory_rules={
+"res://addons": 1
+}
 
 [display]
 
