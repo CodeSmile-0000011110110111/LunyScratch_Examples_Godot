@@ -9,21 +9,21 @@ public sealed class ExampleLunyScript : Script
 	public override void Build(ScriptContext context)
 	{
 		// Set up variables
-		Var("Health").Set(100);
-		Var("Name").Set("Player1");
-		GVar("GameScore").Set(0);
+		Var["Health"].Set(100);
+		Var["Name"].Set("Player1");
+		GVar["GameScore"].Set(0);
 
-		GVar("Boolean_True").Set(true);
-		GVar("Boolean_False").Set(false);
-		GVar("String_Value").Set("this is a string");
-		GVar("Number_Value").Set(1234567890);
+		GVar["Boolean_True"].Set(true);
+		GVar["Boolean_False"].Set(false);
+		GVar["String_Value"].Set("this is a string");
+		GVar["Number_Value"].Set(1234567890);
 
 		// Multi-block sequence demonstrating debug breakpoint
-		On.FrameUpdate(Var("Health").Dec(), Var("LocalScore").Inc());
+		On.FrameUpdate(Var["Health"].Dec(), Var["LocalScore"].Inc());
 
 		// Demonstrate global variables with variable change tracking
 		// In debug builds, Variables.OnVariableChanged events will fire
-		On.Heartbeat(GVar("GameScore").Inc());
+		On.Heartbeat(GVar["GameScore"].Inc());
 
 		// Note: To enable debug features, build with DEBUG, LUNY_DEBUG, or LUNYSCRIPT_DEBUG defined
 		// In release builds, all DebugLog() and DebugBreak() calls have zero overhead
